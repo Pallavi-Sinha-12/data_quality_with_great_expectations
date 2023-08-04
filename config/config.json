@@ -1,0 +1,45 @@
+{
+    "raw_dataset_name" : "student_raw",
+    "standardized_dataset_name" : "student",
+    "columns" : [
+        {
+            "src_column" : "roll_no",
+            "dest_column" : "roll_no",
+            "include" : "yes",
+            "additional_column" : "no",
+            "apply_rules": null,
+            "column_order" : 1,
+            "data_type" : "int",
+            "dq_rule(s)" : [
+                {
+                    "rule_name" : "check_null",
+                    "rule_dimension" : "Completeness",
+                    "add_info" : {}
+                },
+                {
+                    "rule_name" : "check_unique",
+                    "rule_dimension" : "Uniqueness",
+                    "add_info" : {}
+                }
+            ]
+        },
+        {
+            "src_column" : "subject",
+            "dest_column" : "subject",
+            "include" : "yes",
+            "additional_column" : "no",
+            "apply_rules": null,
+            "column_order" : 2,
+            "data_type" : "string",
+            "dq_rule(s)" : [
+                {
+                    "rule_name" : "check_if_values_in_list",
+                    "rule_dimension" : "Validity",
+                    "add_info" : {
+                        "value_set" : ["Maths", "Science", "English", "Hindi", "Sanskrit"]
+                    }
+                }
+            ]
+        }
+    ]
+}
