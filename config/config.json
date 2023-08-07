@@ -1,36 +1,37 @@
 {
-    "raw_dataset_name" : "student_raw",
-    "standardized_dataset_name" : "student",
+    "data_product_name": "student",
     "columns" : [
         {
-            "src_column" : "roll_no",
-            "dest_column" : "roll_no",
-            "include" : "yes",
-            "additional_column" : "no",
-            "apply_rules": null,
-            "column_order" : 1,
-            "data_type" : "int",
+            "column_name" : "roll_no",
             "dq_rule(s)" : [
                 {
-                    "rule_name" : "check_null",
+                    "rule_name" : "check_if_not_null",
                     "rule_dimension" : "Completeness",
                     "add_info" : {}
                 },
                 {
-                    "rule_name" : "check_unique",
+                    "rule_name" : "check_if_unique",
                     "rule_dimension" : "Uniqueness",
                     "add_info" : {}
                 }
             ]
         },
         {
-            "src_column" : "subject",
-            "dest_column" : "subject",
-            "include" : "yes",
-            "additional_column" : "no",
-            "apply_rules": null,
-            "column_order" : 2,
-            "data_type" : "string",
+            "column_name" : "first_name",
+            "dq_rule(s)" : [
+                {
+                    "rule_name" : "check_if_not_null",
+                    "rule_dimension" : "Completeness",
+                    "add_info" : {}
+                }
+            ]
+        },
+        {
+            "column_name" : "last_name",
+            "dq_rule(s)" : []
+        },
+        {
+            "column_name" : "subject",
             "dq_rule(s)" : [
                 {
                     "rule_name" : "check_if_values_in_list",
